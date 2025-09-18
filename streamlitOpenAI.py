@@ -1,15 +1,13 @@
 # Importing the necessary modules from the Streamlit and LangChain packages
 import streamlit as st  
 from openai import OpenAI
- 
- 
-openai_api_key = st.secrets.get("OPENAI_API_KEY")
 
 # Setting the title of the Streamlit application
 st.title('Senthil LLM 🤖')
 
 # Creating a sidebar input widget for the OpenAI API key, input type is password for security
-#openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
+openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
+#openai_api_key = st.secrets.get("OPENAI_API_KEY")
 
 print(openai_api_key)
 
@@ -48,4 +46,5 @@ with st.form('my_form'):
     
     # If the form is submitted and the API key is valid, generate a response
     if submitted:
+
         generate_response(text)
