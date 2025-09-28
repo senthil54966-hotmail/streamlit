@@ -25,7 +25,6 @@ st.set_page_config(
 # OpenAI client (put your key in Streamlit Secrets)
 # ------------------------------
 try:
-    client = OpenAI(api_key="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")
 except Exception:
     client = OpenAI()  # falls back to env var OPENAI_API_KEY
 
@@ -539,4 +538,5 @@ with TAB_EMERGENCY:
         reply = ask_with_rag(u2)
         st.session_state.em_chat.append({"role": "assistant", "content": reply})
         st.rerun()
+
 
